@@ -1,0 +1,430 @@
+/* ========================================
+   PROJECTS SECTION
+======================================== */
+
+.projects {
+  padding: 110px 6%;
+  background: #10100f;
+  color: #f4f1eb;
+}
+
+.projects__container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* Header */
+
+.projects__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 35px;
+  margin-bottom: 45px;
+}
+
+.projects__eyebrow {
+  margin: 0 0 18px;
+  color: #c2a77b;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.projects__title {
+  margin: 0;
+  font-size: clamp(42px, 5vw, 70px);
+  line-height: 1.05;
+  font-weight: 500;
+  letter-spacing: -2px;
+}
+
+.projects__title span {
+  color: #c2a77b;
+  font-family: Georgia, serif;
+  font-style: italic;
+}
+
+.projects__description {
+  max-width: 350px;
+  margin: 0 0 5px;
+  color: #aaa69e;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+/* ========================================
+   PROJECTS GRID
+======================================== */
+
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  align-items: stretch;
+}
+
+/* Every card has the same height */
+
+.project-card {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 300px;
+  min-width: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  background: #20201d;
+  color: #fff;
+  text-align: left;
+  cursor: pointer;
+}
+
+/* Disable old large and wide card layouts */
+
+.project-card--large {
+  grid-row: auto;
+}
+
+.project-card--wide {
+  grid-column: auto;
+}
+
+/* Images */
+
+.project-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.78);
+  transition:
+    transform 0.6s ease,
+    filter 0.4s ease;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+.project-card:hover img {
+  transform: scale(1.045);
+  filter: brightness(0.55);
+}
+
+.project-card:focus-visible {
+  outline: 2px solid #c2a77b;
+  outline-offset: 4px;
+}
+
+/* ========================================
+   CARD OVERLAY
+======================================== */
+
+.project-card__overlay {
+  position: absolute;
+  inset: auto 0 0;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 9px;
+  padding: 55px 22px 20px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.35) 35%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+}
+
+.project-card__category {
+  grid-column: 1 / -1;
+  color: #d5bd96;
+  font-size: 9px;
+  letter-spacing: 2px;
+  line-height: 1.5;
+}
+
+.project-card__title {
+  font-family: Georgia, serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.project-card__icon {
+  color: #c2a77b;
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-card__icon {
+  transform: translate(3px, -3px);
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.projects__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  margin-top: 30px;
+  padding-top: 23px;
+  border-top: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.projects__footer p {
+  margin: 0;
+  color: #aaa69e;
+  font-size: 9px;
+  letter-spacing: 2px;
+  line-height: 1.8;
+}
+
+.projects__contact {
+  color: #aaa69e;
+  font-size: 11px;
+  line-height: 1.8;
+  transition: color 0.2s ease;
+}
+
+.projects__contact span {
+  margin-left: 8px;
+  color: #c2a77b;
+}
+
+.projects__contact:hover {
+  color: #fff;
+}
+
+/* ========================================
+   PROJECT LIGHTBOX
+======================================== */
+
+.project-lightbox {
+  position: fixed;
+  width: min(1100px, calc(100% - 30px));
+  max-width: none;
+  max-height: calc(100% - 30px);
+  margin: auto;
+  padding: 55px 55px 20px;
+  overflow: auto;
+  border: 1px solid #39372f;
+  background: #151513;
+  color: #f4f1eb;
+  text-align: center;
+}
+
+.project-lightbox[open] {
+  display: block;
+}
+
+.project-lightbox::backdrop {
+  background: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(7px);
+}
+
+.project-lightbox__image {
+  display: block;
+  max-width: 100%;
+  max-height: 72vh;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.project-lightbox__close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: #151513;
+  color: #fff;
+  font-size: 27px;
+  cursor: pointer;
+}
+
+.project-lightbox__arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 45px;
+  padding: 0;
+  transform: translateY(-50%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: #25241f;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.project-lightbox__arrow:hover {
+  background: #c2a77b;
+  color: #171512;
+}
+
+.project-lightbox__prev {
+  left: 8px;
+}
+
+.project-lightbox__next {
+  right: 8px;
+}
+
+.project-lightbox__caption {
+  margin: 18px 0 0;
+  color: #c2a77b;
+  font-size: 11px;
+  letter-spacing: 1px;
+  line-height: 1.8;
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1000px) {
+  .projects {
+    padding: 90px 5%;
+  }
+
+  .projects__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .project-card {
+    height: 280px;
+  }
+
+  .projects__header {
+    gap: 25px;
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+  .projects {
+    padding: 70px 20px;
+  }
+
+  .projects__header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 30px;
+  }
+
+  .projects__title {
+    font-size: clamp(40px, 11vw, 56px);
+  }
+
+  .projects__description {
+    max-width: 100%;
+    font-size: 12px;
+  }
+
+  .projects__grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .project-card {
+    height: 280px;
+  }
+
+  .project-card__overlay {
+    padding: 50px 18px 17px;
+  }
+
+  .project-card__title {
+    font-size: 21px;
+  }
+
+  .project-card__category {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+  }
+
+  .projects__footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 24px;
+  }
+
+  .projects__footer p {
+    font-size: 8px;
+  }
+
+  .project-lightbox {
+    width: calc(100% - 20px);
+    max-height: calc(100% - 20px);
+    padding: 55px 10px 18px;
+  }
+
+  .project-lightbox__image {
+    max-width: 100%;
+    max-height: 65vh;
+  }
+
+  .project-lightbox__prev {
+    left: 3px;
+  }
+
+  .project-lightbox__next {
+    right: 3px;
+  }
+}
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 380px) {
+  .projects {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  .project-card {
+    height: 250px;
+  }
+
+  .project-card__title {
+    font-size: 19px;
+  }
+}
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card img,
+  .project-card__icon,
+  .projects__contact,
+  .project-lightbox__arrow {
+    transition: none;
+  }
+}

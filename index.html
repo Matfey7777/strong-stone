@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Strong Stone Company — architecture, interior design and construction."
+    />
+
+    <meta name="theme-color" content="#101010" />
+
+    <title>Strong Stone Company</title>
+
+    <link rel="stylesheet" href="/src/css/style.css" />
+    <script type="module" src="/src/main.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <header class="header">
+        <div class="header-container">
+          <a class="logo" href="#" aria-label="Strong Stone Company — home">
+            <span class="logo__name">STRONG STONE</span>
+            <span class="logo__subtitle">COMPANY</span>
+          </a>
+
+          <nav class="navigation" aria-label="Main navigation">
+            <ul class="navigation__list">
+              <li><a class="navigation__link" href="#services">Services</a></li>
+              <li><a class="navigation__link" href="#about">About</a></li>
+              <li><a class="navigation__link" href="#projects">Projects</a></li>
+            </ul>
+          </nav>
+
+          <div class="header-actions">
+            <a class="header-contact" href="#contact">Contact us</a>
+
+            <button
+              class="language-button"
+              type="button"
+              aria-label="Selected language: English"
+            >
+              EN
+            </button>
+
+            <button
+              class="burger"
+              type="button"
+              aria-label="Open navigation menu"
+              aria-expanded="false"
+              aria-controls="mobile-menu"
+            >
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </div>
+
+        <div class="mobile-menu" id="mobile-menu">
+          <nav aria-label="Mobile navigation">
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact us</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero" id="home">
+          <div class="hero__overlay"></div>
+
+          <div class="hero__content">
+            <p class="hero__eyebrow">STRONG STONE COMPANY</p>
+
+            <h1 class="hero__title">
+              From Vision
+              <span>to Reality</span>
+            </h1>
+
+            <p class="hero__subtitle">Construction. Design. Excellence.</p>
+
+            <p class="hero__description">
+              We create modern spaces that inspire — combining quality,
+              innovation and timeless style.
+            </p>
+
+            <div class="hero__actions">
+              <a class="hero__button hero__button--primary" href="#projects">
+                Discover Our Projects
+                <span aria-hidden="true">→</span>
+              </a>
+
+              <a class="hero__button hero__button--secondary" href="#contact">
+                Get a Consultation
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+
+          <a
+            class="hero__scroll"
+            href="#services"
+            aria-label="Scroll to services"
+          >
+            <span></span>
+            <span>SCROLL TO DISCOVER</span>
+          </a>
+        </section>
+
+        <section class="services" id="services">
+          <div class="services__container">
+            <div class="services__top">
+              <div class="services__heading">
+                <p class="services__eyebrow">WHAT WE DO</p>
+                <h2 class="services__title">Our Services</h2>
+                <p class="services__description">
+                  Construction, design and artistic solutions, created with
+                  attention to every detail.
+                </p>
+              </div>
+
+              <div class="services__controls">
+                <button
+                  class="services__arrow services__arrow--prev"
+                  type="button"
+                  aria-label="Previous service"
+                >
+                  ←
+                </button>
+
+                <button
+                  class="services__arrow services__arrow--next"
+                  type="button"
+                  aria-label="Next service"
+                >
+                  →
+                </button>
+              </div>
+            </div>
+
+            <div class="swiper services__swiper">
+              <div class="swiper-wrapper">
+                <article class="swiper-slide service-card">
+                  <img
+                    class="service-card__image"
+                    src="/images/service-design.jpg"
+                    alt="Interior and exterior design"
+                    loading="lazy"
+                  />
+                  <div class="service-card__content">
+                    <span class="service-card__number">01</span>
+                    <h3>Interior & Exterior Design</h3>
+                    <p>Elegant, practical and personalised spaces.</p>
+                    <button
+                      class="service-card__more"
+                      type="button"
+                      data-service="design"
+                    >
+                      More information <span>↗</span>
+                    </button>
+                  </div>
+                </article>
+
+                <article class="swiper-slide service-card">
+                  <img
+                    class="service-card__image"
+                    src="/images/service-construction.jpg"
+                    alt="Construction and finishing"
+                    loading="lazy"
+                  />
+                  <div class="service-card__content">
+                    <span class="service-card__number">02</span>
+                    <h3>Construction & Finishing</h3>
+                    <p>Complete construction solutions from start to finish.</p>
+                    <button
+                      class="service-card__more"
+                      type="button"
+                      data-service="construction"
+                    >
+                      More information <span>↗</span>
+                    </button>
+                  </div>
+                </article>
+
+                <article class="swiper-slide service-card">
+                  <img
+                    class="service-card__image"
+                    src="/images/service-restoration.jpg"
+                    alt="Building restoration"
+                    loading="lazy"
+                  />
+                  <div class="service-card__content">
+                    <span class="service-card__number">03</span>
+                    <h3>Building Restoration</h3>
+                    <p>Preserving and enhancing architectural heritage.</p>
+                    <button
+                      class="service-card__more"
+                      type="button"
+                      data-service="restoration"
+                    >
+                      More information <span>↗</span>
+                    </button>
+                  </div>
+                </article>
+
+                <article class="swiper-slide service-card">
+                  <img
+                    class="service-card__image"
+                    src="/images/service-decoration.jpg"
+                    alt="Artistic painting and wall decoration"
+                    loading="lazy"
+                  />
+                  <div class="service-card__content">
+                    <span class="service-card__number">04</span>
+                    <h3>Artistic Painting & Wall Decor</h3>
+                    <p>Unique decorative creations for distinctive spaces.</p>
+                    <button
+                      class="service-card__more"
+                      type="button"
+                      data-service="decoration"
+                    >
+                      More information <span>↗</span>
+                    </button>
+                  </div>
+                </article>
+
+                <article class="swiper-slide service-card">
+                  <img
+                    class="service-card__image"
+                    src="/images/service-windows.jpg"
+                    alt="Windows and doors"
+                    loading="lazy"
+                  />
+                  <div class="service-card__content">
+                    <span class="service-card__number">05</span>
+                    <h3>Windows & Doors</h3>
+                    <p>Modern materials, durability and security.</p>
+                    <button
+                      class="service-card__more"
+                      type="button"
+                      data-service="windows"
+                    >
+                      More information <span>↗</span>
+                    </button>
+                  </div>
+                </article>
+
+                <article class="swiper-slide service-card">
+                  <img
+                    class="service-card__image"
+                    src="/images/service-sculptures.jpg"
+                    alt="Sculptures and artistic creations"
+                    loading="lazy"
+                  />
+                  <div class="service-card__content">
+                    <span class="service-card__number">06</span>
+                    <h3>Sculptures & Artistic Creations</h3>
+                    <p>Distinctive sculptural pieces for unique spaces.</p>
+                    <button
+                      class="service-card__more"
+                      type="button"
+                      data-service="sculptures"
+                    >
+                      More information <span>↗</span>
+                    </button>
+                  </div>
+                </article>
+              </div>
+
+              <div class="services__pagination"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="projects section" id="projects">
+          <div class="container">
+            <div class="section-heading">
+              <div>
+                <p class="section-heading__eyebrow">SELECTED WORK</p>
+                <h2 class="section-heading__title">
+                  Our <span>projects</span>
+                </h2>
+              </div>
+
+              <p class="section-heading__text">
+                A selection of spaces shaped by craftsmanship, functionality and
+                a timeless approach to design.
+              </p>
+            </div>
+
+            <div class="projects__grid">
+              <a
+                class="project-card project-lightbox-link"
+                href="/images/project-01-interior.jpg"
+                data-caption="Interior Design"
+              >
+                <img
+                  class="project-card__image"
+                  src="/images/project-01-interior.jpg"
+                  alt="Interior design project"
+                  loading="lazy"
+                />
+                <span class="project-card__overlay">
+                  <span class="project-card__category">INTERIOR</span>
+                  <span class="project-card__title">Interior Design</span>
+                  <span class="project-card__icon">↗</span>
+                </span>
+              </a>
+
+              <a
+                class="project-card project-lightbox-link"
+                href="/images/project-02-kitchen.jpg"
+                data-caption="Modern Kitchen"
+              >
+                <img
+                  class="project-card__image"
+                  src="/images/project-02-kitchen.jpg"
+                  alt="Modern kitchen project"
+                  loading="lazy"
+                />
+                <span class="project-card__overlay">
+                  <span class="project-card__category">INTERIOR</span>
+                  <span class="project-card__title">Modern Kitchen</span>
+                  <span class="project-card__icon">↗</span>
+                </span>
+              </a>
+
+              <a
+                class="project-card project-lightbox-link"
+                href="/images/project-03-building.jpg"
+                data-caption="Building Project"
+              >
+                <img
+                  class="project-card__image"
+                  src="/images/project-03-building.jpg"
+                  alt="Building construction project"
+                  loading="lazy"
+                />
+                <span class="project-card__overlay">
+                  <span class="project-card__category">CONSTRUCTION</span>
+                  <span class="project-card__title">Building Project</span>
+                  <span class="project-card__icon">↗</span>
+                </span>
+              </a>
+
+              <a
+                class="project-card project-lightbox-link"
+                href="/images/project-04-facade.jpg"
+                data-caption="Architectural Facade"
+              >
+                <img
+                  class="project-card__image"
+                  src="/images/project-04-facade.jpg"
+                  alt="Architectural facade project"
+                  loading="lazy"
+                />
+                <span class="project-card__overlay">
+                  <span class="project-card__category">EXTERIOR</span>
+                  <span class="project-card__title">Architectural Facade</span>
+                  <span class="project-card__icon">↗</span>
+                </span>
+              </a>
+
+              <a
+                class="project-card project-lightbox-link"
+                href="/images/project-05-interior-detail.jpg"
+                data-caption="Interior Details"
+              >
+                <img
+                  class="project-card__image"
+                  src="/images/project-05-interior-detail.jpg"
+                  alt="Interior finishing detail"
+                  loading="lazy"
+                />
+                <span class="project-card__overlay">
+                  <span class="project-card__category">DETAILS</span>
+                  <span class="project-card__title">Interior Details</span>
+                  <span class="project-card__icon">↗</span>
+                </span>
+              </a>
+
+              <a
+                class="project-card project-lightbox-link"
+                href="/images/project-06-exterior.jpg"
+                data-caption="Exterior Design"
+              >
+                <img
+                  class="project-card__image"
+                  src="/images/project-06-exterior.jpg"
+                  alt="Exterior design project"
+                  loading="lazy"
+                />
+                <span class="project-card__overlay">
+                  <span class="project-card__category">EXTERIOR</span>
+                  <span class="project-card__title">Exterior Design</span>
+                  <span class="project-card__icon">↗</span>
+                </span>
+              </a>
+
+              <a
+                class="project-card project-lightbox-link"
+                href="/images/project-07-architecture.jpg"
+                data-caption="Modern Architecture"
+              >
+                <img
+                  class="project-card__image"
+                  src="/images/project-07-architecture.jpg"
+                  alt="Modern architecture project"
+                  loading="lazy"
+                />
+                <span class="project-card__overlay">
+                  <span class="project-card__category">ARCHITECTURE</span>
+                  <span class="project-card__title">Modern Architecture</span>
+                  <span class="project-card__icon">↗</span>
+                </span>
+              </a>
+
+              <a
+                class="project-card project-lightbox-link"
+                href="/images/project-08-renovation.jpg"
+                data-caption="Renovation Project"
+              >
+                <img
+                  class="project-card__image"
+                  src="/images/project-08-renovation.jpg"
+                  alt="Renovation project"
+                  loading="lazy"
+                />
+                <span class="project-card__overlay">
+                  <span class="project-card__category">RENOVATION</span>
+                  <span class="project-card__title">Renovation Project</span>
+                  <span class="project-card__icon">↗</span>
+                </span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <dialog class="project-lightbox" id="project-lightbox">
+          <button
+            class="project-lightbox__close"
+            type="button"
+            aria-label="Close"
+          >
+            &times;
+          </button>
+          <button
+            class="project-lightbox__arrow project-lightbox__prev"
+            type="button"
+            aria-label="Previous project"
+          >
+            ←
+          </button>
+          <img class="project-lightbox__image" src="" alt="" />
+          <button
+            class="project-lightbox__arrow project-lightbox__next"
+            type="button"
+            aria-label="Next project"
+          >
+            →
+          </button>
+          <p class="project-lightbox__caption"></p>
+        </dialog>
+
+        <dialog class="project-lightbox" id="project-lightbox">
+          <button
+            class="project-lightbox__close"
+            type="button"
+            aria-label="Close"
+          >
+            &times;
+          </button>
+
+          <button
+            class="project-lightbox__arrow project-lightbox__prev"
+            type="button"
+            aria-label="Previous project"
+          >
+            ←
+          </button>
+
+          <img class="project-lightbox__image" src="" alt="" />
+
+          <button
+            class="project-lightbox__arrow project-lightbox__next"
+            type="button"
+            aria-label="Next project"
+          >
+            →
+          </button>
+
+          <p class="project-lightbox__caption"></p>
+        </dialog>
+
+        <dialog
+          class="service-modal"
+          id="service-modal"
+          aria-labelledby="service-modal-title"
+        >
+          <div class="service-modal__layout">
+            <div class="service-modal__image-wrap">
+              <img class="service-modal__image" src="" alt="" />
+            </div>
+
+            <div class="service-modal__content">
+              <button
+                class="service-modal__close"
+                type="button"
+                aria-label="Close details"
+              >
+                &times;
+              </button>
+
+              <p class="service-modal__eyebrow">STRONG STONE COMPANY</p>
+              <span class="service-modal__number"></span>
+              <h2 class="service-modal__title" id="service-modal-title"></h2>
+              <p class="service-modal__description"></p>
+
+              <h3 class="service-modal__subtitle">What we offer</h3>
+              <ul class="service-modal__features"></ul>
+
+              <a class="service-modal__contact" href="#contact">
+                Contact us <span>→</span>
+              </a>
+            </div>
+          </div>
+        </dialog>
+
+        <section class="placeholder-section" id="about">
+          <div class="section-container">
+            <p class="section-eyebrow">WHO WE ARE</p>
+            <h2>About Us</h2>
+            <p>
+              We create functional, elegant and durable spaces tailored to every
+              client's needs.
+            </p>
+          </div>
+        </section>
+
+        <section class="placeholder-section" id="projects">
+          <div class="section-container">
+            <p class="section-eyebrow">OUR WORK</p>
+            <h2>Selected Projects</h2>
+            <p>Discover our construction, finishing and design projects.</p>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer" id="contact">
+        <div class="section-container">
+          <h2>Let's discuss your project.</h2>
+          <a href="mailto:strongstone88@gmail.com"> strongstone88@gmail.com </a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
