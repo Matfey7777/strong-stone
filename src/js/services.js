@@ -11,99 +11,19 @@ const refs = {
   pagination: document.querySelector(".services__pagination"),
 
   modal: document.querySelector("#service-modal"),
-  modalImage: document.querySelector(".service-modal__image"),
-  modalNumber: document.querySelector(".service-modal__number"),
-  modalTitle: document.querySelector(".service-modal__title"),
-  modalDescription: document.querySelector(".service-modal__description"),
-  modalFeatures: document.querySelector(".service-modal__features"),
   closeButton: document.querySelector(".service-modal__close"),
-  contactButton: document.querySelector(".service-modal__contact"),
+  contactForm: document.querySelector("#service-request-form"),
+  serviceSelect: document.querySelector("#service-form-service"),
+  formStatus: document.querySelector(".service-modal__form-status"),
 };
 
-const services = {
-  design: {
-    number: "01",
-    title: "Interior & Exterior Design",
-    image: "/images/service-design.jpg",
-    description:
-      "We create elegant, functional and personalised interiors and exteriors. Each project considers the client's needs, materials, colours and architectural details.",
-    features: [
-      "Personalised interior concepts",
-      "Exterior and facade design",
-      "Material and finish selection",
-      "Functional layouts and attention to detail",
-    ],
-  },
-
-  construction: {
-    number: "02",
-    title: "Construction & Finishing",
-    image: "/images/service-construction.jpg",
-    description:
-      "Construction and finishing solutions coordinated around quality, practical decisions and a clear process towards the completed space.",
-    features: [
-      "Construction and renovation work",
-      "Interior finishing",
-      "Project coordination",
-      "Turnkey project solutions",
-    ],
-  },
-
-  restoration: {
-    number: "03",
-    title: "Building Restoration",
-    image: "/images/service-restoration.jpg",
-    description:
-      "Restoration work focused on preserving a building's character, improving its condition and respecting architectural details.",
-    features: [
-      "Facade restoration",
-      "Building renovation",
-      "Insulation and protective improvements",
-      "Preservation of architectural details",
-    ],
-  },
-
-  decoration: {
-    number: "04",
-    title: "Artistic Painting & Wall Decor",
-    image: "/images/service-decoration.jpg",
-    description:
-      "Decorative finishes and artistic details that give interiors character and individuality.",
-    features: [
-      "Decorative wall finishes",
-      "Artistic painting concepts",
-      "Textured surface effects",
-      "Custom decorative solutions",
-    ],
-  },
-
-  windows: {
-    number: "05",
-    title: "Windows & Doors",
-    image: "/images/service-windows.jpg",
-    description:
-      "Window and door solutions chosen for appearance, practicality, durability and security.",
-    features: [
-      "Window and door selection",
-      "Modern frame and glazing options",
-      "Installation coordination",
-      "Solutions tailored to the property",
-    ],
-  },
-
-  sculptures: {
-    number: "06",
-    title: "Sculptures & Artistic Creations",
-    image: "/images/service-sculptures.jpg",
-    description:
-      "Sculptural and artistic elements that can become distinctive focal points in residential, commercial and architectural spaces.",
-    features: [
-      "Decorative sculptural elements",
-      "Artistic concepts for interiors",
-      "Architectural statement pieces",
-      "Custom project discussions",
-    ],
-  },
+const serviceNames = {
+  design: "Interior & Exterior Design",
+  construction: "Construction & Finishing",
+  restoration: "Building Restoration",
+  decoration: "Artistic Painting & Wall Decor",
+  windows: "Windows & Doors",
+  sculptures: "Sculptures & Artistic Creations",
 };
 
 function initServicesSwiper() {
@@ -118,18 +38,10 @@ function initServicesSwiper() {
 
   new Swiper(refs.swiper, {
     modules: [Navigation, Pagination, A11y],
-
     slidesPerView: 1,
     slidesPerGroup: 1,
     spaceBetween: 20,
     speed: 500,
-
-    allowTouchMove: true,
-    simulateTouch: true,
-    grabCursor: true,
-    touchStartPreventDefault: false,
-    threshold: 5,
-    touchAngle: 45,
     watchOverflow: true,
     rewind: true,
 
@@ -148,7 +60,6 @@ function initServicesSwiper() {
         slidesPerView: 2,
         spaceBetween: 20,
       },
-
       1024: {
         slidesPerView: 3,
         spaceBetween: 24,
@@ -161,76 +72,106 @@ function initServicesSwiper() {
   });
 }
 
-function openServiceModal(serviceKey) {
-  const service = services[serviceKey];
+function openContactForm(serviceKey = "") {
+  if (!refs.modal) {
+    console.error('Dialog "#service-modal" was not found.');
+    return;
+  }
 
-  if (!service || !refs.modal) return;
+  refs.contactForm?.reset();
 
-  refs.modalImage.src = service.image;
-  refs.modalImage.alt = service.title;
-  refs.modalNumber.textContent = service.number;
-  refs.modalTitle.textContent = service.title;
-  refs.modalDescription.textContent = service.description;
+  if (refs.serviceSelect) {
+    refs.serviceSelect.value = serviceNames[serviceKey] ? serviceKey : "";
+  }
 
-  refs.modalFeatures.replaceChildren();
+  if (refs.formStatus) {
+    refs.formStatus.textContent = "";
+  }
 
-  service.features.forEach((feature) => {
-    const item = document.createElement("li");
-    item.textContent = feature;
-    refs.modalFeatures.append(item);
-  });
+  if (!refs.modal.open) {
+    refs.modal.showModal();
+  }
 
-  refs.contactButton.href = "#contact";
-
-  refs.modal.showModal();
   document.body.classList.add("modal-open");
+
+  requestAnimationFrame(() => {
+    document.querySelector("#service-form-name")?.focus();
+  });
 }
 
-function closeServiceModal() {
-  if (!refs.modal?.open) return;
-
-  refs.modal.close();
-  document.body.classList.remove("modal-open");
+function closeContactForm() {
+  if (refs.modal?.open) {
+    refs.modal.close();
+  }
 }
 
-function onServiceButtonClick(event) {
-  const button = event.target.closest("[data-service]");
+function onDocumentClick(event) {
+  const consultationButton = event.target.closest("[data-open-consultation]");
 
-  if (!button) return;
+  if (consultationButton) {
+    event.preventDefault();
+    openContactForm();
+    return;
+  }
 
-  openServiceModal(button.dataset.service);
+  const serviceButton = event.target.closest(
+    ".service-card__more[data-service]",
+  );
+
+  if (serviceButton) {
+    event.preventDefault();
+    openContactForm(serviceButton.dataset.service);
+  }
 }
 
 function onModalClick(event) {
   if (event.target === refs.modal) {
-    closeServiceModal();
+    closeContactForm();
   }
 }
 
-function onContactClick() {
-  closeServiceModal();
-}
+function onFormSubmit(event) {
+  event.preventDefault();
 
-function initServiceModal() {
-  if (
-    !refs.modal ||
-    !refs.modalImage ||
-    !refs.modalTitle ||
-    !refs.modalDescription ||
-    !refs.modalFeatures
-  ) {
+  if (!refs.contactForm?.reportValidity()) {
     return;
   }
 
-  document.addEventListener("click", onServiceButtonClick);
+  const formData = new FormData(refs.contactForm);
 
-  refs.closeButton?.addEventListener("click", closeServiceModal);
+  const request = {
+    name: String(formData.get("name") || "").trim(),
+    email: String(formData.get("email") || "").trim(),
+    phone: String(formData.get("phone") || "").trim(),
+    service: serviceNames[String(formData.get("service") || "")] || "",
+    message: String(formData.get("message") || "").trim(),
+  };
+
+  // Demo only: no email is sent yet.
+  console.info("Contact request (demo only):", request);
+
+  if (refs.formStatus) {
+    refs.formStatus.textContent =
+      "Thank you! Sending requests has not been connected yet.";
+  }
+}
+
+function initServiceModal() {
+  if (!refs.modal) {
+    console.error('The dialog "#service-modal" was not found.');
+    return;
+  }
+
+  document.addEventListener("click", onDocumentClick);
+
+  refs.closeButton?.addEventListener("click", closeContactForm);
   refs.modal.addEventListener("click", onModalClick);
-  refs.contactButton?.addEventListener("click", onContactClick);
 
   refs.modal.addEventListener("close", () => {
     document.body.classList.remove("modal-open");
   });
+
+  refs.contactForm?.addEventListener("submit", onFormSubmit);
 }
 
 initServicesSwiper();
