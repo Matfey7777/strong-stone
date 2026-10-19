@@ -35,7 +35,13 @@
           </nav>
 
           <div class="header-actions">
-            <a class="header-contact" href="#contact">Contact us</a>
+            <a
+              href="#contact"
+              class="header-contact header__contact"
+              data-open-consultation
+            >
+              Contact us
+            </a>
 
             <button
               class="language-button"
@@ -279,6 +285,7 @@
         </section>
 
         <!-- PROJECTS -->
+
         <section class="projects section" id="projects">
           <div class="container">
             <div class="section-heading">
@@ -297,11 +304,12 @@
             </div>
 
             <div class="projects__grid">
-              <!-- Project 1: Wellness interior -->
-              <a
+              <button
                 class="project-card project-lightbox-link"
-                href="/images/project-01-interior.jpg"
+                type="button"
+                data-image="/images/project-01-interior.jpg"
                 data-caption="Wellness Interior"
+                aria-label="View project: Wellness Interior"
               >
                 <img
                   class="project-card__image"
@@ -312,15 +320,15 @@
                 <span class="project-card__overlay">
                   <span class="project-card__category">INTERIOR DESIGN</span>
                   <span class="project-card__title">Wellness Interior</span>
-                  <span class="project-card__icon" aria-hidden="true">↗</span>
                 </span>
-              </a>
+              </button>
 
-              <!-- Project 2: Building construction -->
-              <a
+              <button
                 class="project-card project-lightbox-link"
-                href="/images/project-02-kitchen.jpg"
+                type="button"
+                data-image="/images/project-02-kitchen.jpg"
                 data-caption="Building Construction"
+                aria-label="View project: Building Construction"
               >
                 <img
                   class="project-card__image"
@@ -331,15 +339,15 @@
                 <span class="project-card__overlay">
                   <span class="project-card__category">CONSTRUCTION</span>
                   <span class="project-card__title">Building Construction</span>
-                  <span class="project-card__icon" aria-hidden="true">↗</span>
                 </span>
-              </a>
+              </button>
 
-              <!-- Project 3: Facade renovation -->
-              <a
+              <button
                 class="project-card project-lightbox-link"
-                href="/images/project-03-building.jpg"
+                type="button"
+                data-image="/images/project-03-building.jpg"
                 data-caption="Facade Renovation"
+                aria-label="View project: Facade Renovation"
               >
                 <img
                   class="project-card__image"
@@ -350,15 +358,15 @@
                 <span class="project-card__overlay">
                   <span class="project-card__category">FACADE WORK</span>
                   <span class="project-card__title">Facade Renovation</span>
-                  <span class="project-card__icon" aria-hidden="true">↗</span>
                 </span>
-              </a>
+              </button>
 
-              <!-- Project 4: Decorative interior -->
-              <a
+              <button
                 class="project-card project-lightbox-link"
-                href="/images/project-04-facade.jpg"
+                type="button"
+                data-image="/images/project-04-facade.jpg"
                 data-caption="Decorative Interior"
+                aria-label="View project: Decorative Interior"
               >
                 <img
                   class="project-card__image"
@@ -369,15 +377,15 @@
                 <span class="project-card__overlay">
                   <span class="project-card__category">DECORATIVE WORK</span>
                   <span class="project-card__title">Decorative Interior</span>
-                  <span class="project-card__icon" aria-hidden="true">↗</span>
                 </span>
-              </a>
+              </button>
 
-              <!-- Project 5: Stone finishing -->
-              <a
+              <button
                 class="project-card project-lightbox-link"
-                href="/images/project-05-interior-detail.jpg"
+                type="button"
+                data-image="/images/project-05-interior-detail.jpg"
                 data-caption="Stone Finishing"
+                aria-label="View project: Stone Finishing"
               >
                 <img
                   class="project-card__image"
@@ -388,15 +396,15 @@
                 <span class="project-card__overlay">
                   <span class="project-card__category">STONE FINISHING</span>
                   <span class="project-card__title">Stone Finishing</span>
-                  <span class="project-card__icon" aria-hidden="true">↗</span>
                 </span>
-              </a>
+              </button>
 
-              <!-- Project 6: Decorative stonework -->
-              <a
+              <button
                 class="project-card project-lightbox-link"
-                href="/images/project-06-exterior.jpg"
+                type="button"
+                data-image="/images/project-06-exterior.jpg"
                 data-caption="Decorative Stonework"
+                aria-label="View project: Decorative Stonework"
               >
                 <img
                   class="project-card__image"
@@ -407,15 +415,15 @@
                 <span class="project-card__overlay">
                   <span class="project-card__category">STONE DESIGN</span>
                   <span class="project-card__title">Decorative Stonework</span>
-                  <span class="project-card__icon" aria-hidden="true">↗</span>
                 </span>
-              </a>
+              </button>
 
-              <!-- Project 7: Luxury interior -->
-              <a
+              <button
                 class="project-card project-lightbox-link"
-                href="/images/project-07-architecture.jpg"
+                type="button"
+                data-image="/images/project-07-architecture.jpg"
                 data-caption="Luxury Interior"
+                aria-label="View project: Luxury Interior"
               >
                 <img
                   class="project-card__image"
@@ -426,15 +434,15 @@
                 <span class="project-card__overlay">
                   <span class="project-card__category">INTERIOR DESIGN</span>
                   <span class="project-card__title">Luxury Interior</span>
-                  <span class="project-card__icon" aria-hidden="true">↗</span>
                 </span>
-              </a>
+              </button>
 
-              <!-- Project 8: Kitchen renovation -->
-              <a
+              <button
                 class="project-card project-lightbox-link"
-                href="/images/project-08-renovation.jpg"
+                type="button"
+                data-image="/images/project-08-renovation.jpg"
                 data-caption="Kitchen Renovation"
+                aria-label="View project: Kitchen Renovation"
               >
                 <img
                   class="project-card__image"
@@ -445,12 +453,12 @@
                 <span class="project-card__overlay">
                   <span class="project-card__category">RENOVATION</span>
                   <span class="project-card__title">Kitchen Renovation</span>
-                  <span class="project-card__icon" aria-hidden="true">↗</span>
                 </span>
-              </a>
+              </button>
             </div>
           </div>
         </section>
+
         <!-- END PROJECTS -->
 
         <dialog class="project-lightbox" id="project-lightbox">
@@ -493,94 +501,124 @@
               &times;
             </button>
 
-            <p class="service-modal__eyebrow">STRONG STONE COMPANY</p>
+            <!-- SERVICE INFORMATION -->
+            <div class="service-modal__details">
+              <p class="service-modal__eyebrow">STRONG STONE COMPANY</p>
 
-            <h2 class="service-modal__title" id="service-modal-title">
-              Let's discuss your project
-            </h2>
+              <span class="service-modal__number"></span>
 
-            <p class="service-modal__description">
-              Tell us about your project and our team will get in touch.
-            </p>
+              <h2 class="service-modal__title" id="service-modal-title"></h2>
 
-            <form class="service-modal__form" id="service-request-form">
-              <div class="service-modal__form-field">
-                <label for="service-form-name">Full name *</label>
-                <input
-                  id="service-form-name"
-                  name="name"
-                  type="text"
-                  placeholder="Your name"
-                  autocomplete="name"
-                  required
-                />
-              </div>
+              <p class="service-modal__description"></p>
 
-              <div class="service-modal__form-field">
-                <label for="service-form-email">Email address *</label>
-                <input
-                  id="service-form-email"
-                  name="email"
-                  type="email"
-                  placeholder="you@example.com"
-                  autocomplete="email"
-                  required
-                />
-              </div>
+              <h3 class="service-modal__subtitle">What we offer</h3>
 
-              <div class="service-modal__form-field">
-                <label for="service-form-phone">Phone number</label>
-                <input
-                  id="service-form-phone"
-                  name="phone"
-                  type="tel"
-                  placeholder="+32 ..."
-                  autocomplete="tel"
-                />
-              </div>
+              <ul class="service-modal__features"></ul>
 
-              <div class="service-modal__form-field">
-                <label for="service-form-service">Service *</label>
-                <select id="service-form-service" name="service" required>
-                  <option value="" disabled selected>Select a service</option>
-                  <option value="design">Interior &amp; Exterior Design</option>
-                  <option value="construction">
-                    Construction &amp; Finishing
-                  </option>
-                  <option value="restoration">Building Restoration</option>
-                  <option value="decoration">
-                    Artistic Painting &amp; Wall Decor
-                  </option>
-                  <option value="windows">Windows &amp; Doors</option>
-                  <option value="sculptures">
-                    Sculptures &amp; Artistic Creations
-                  </option>
-                </select>
-              </div>
-
-              <div
-                class="service-modal__form-field service-modal__form-field--full"
-              >
-                <label for="service-form-message">Message *</label>
-                <textarea
-                  id="service-form-message"
-                  name="message"
-                  rows="4"
-                  placeholder="Tell us about your project..."
-                  required
-                ></textarea>
-              </div>
-
-              <p
-                class="service-modal__form-status"
-                role="status"
-                aria-live="polite"
-              ></p>
-
-              <button class="service-modal__submit" type="submit">
-                Send request <span aria-hidden="true">↗</span>
+              <button class="service-modal__contact" type="button">
+                Contact us <span aria-hidden="true">→</span>
               </button>
-            </form>
+            </div>
+            <!-- END SERVICE INFORMATION -->
+
+            <!-- CONTACT FORM -->
+            <div class="service-modal__form-view" hidden>
+              <p class="service-modal__eyebrow">STRONG STONE COMPANY</p>
+
+              <h2 class="service-modal__title">Let's discuss your project</h2>
+
+              <p class="service-modal__description">
+                Tell us about your project and our team will get in touch.
+              </p>
+
+              <form class="service-modal__form" id="service-request-form">
+                <div class="service-modal__form-field">
+                  <label for="service-form-name">Full name *</label>
+                  <input
+                    id="service-form-name"
+                    name="name"
+                    type="text"
+                    placeholder="Your name"
+                    autocomplete="name"
+                    required
+                  />
+                </div>
+
+                <div class="service-modal__form-field">
+                  <label for="service-form-email">Email address *</label>
+                  <input
+                    id="service-form-email"
+                    name="email"
+                    type="email"
+                    placeholder="you@example.com"
+                    autocomplete="email"
+                    required
+                  />
+                </div>
+
+                <div class="service-modal__form-field">
+                  <label for="service-form-phone">Phone number</label>
+                  <input
+                    id="service-form-phone"
+                    name="phone"
+                    type="tel"
+                    placeholder="+32 ..."
+                    autocomplete="tel"
+                  />
+                </div>
+
+                <div class="service-modal__form-field">
+                  <label for="service-form-service">Service *</label>
+                  <select id="service-form-service" name="service" required>
+                    <option value="" disabled selected>Select a service</option>
+                    <option value="design">
+                      Interior &amp; Exterior Design
+                    </option>
+                    <option value="construction">
+                      Construction &amp; Finishing
+                    </option>
+                    <option value="restoration">Building Restoration</option>
+                    <option value="decoration">
+                      Artistic Painting &amp; Wall Decor
+                    </option>
+                    <option value="windows">Windows &amp; Doors</option>
+                    <option value="sculptures">
+                      Sculptures &amp; Artistic Creations
+                    </option>
+                  </select>
+                </div>
+
+                <div
+                  class="service-modal__form-field service-modal__form-field--full"
+                >
+                  <label for="service-form-message">Message *</label>
+                  <textarea
+                    id="service-form-message"
+                    name="message"
+                    rows="4"
+                    placeholder="Tell us about your project..."
+                    required
+                  ></textarea>
+                </div>
+
+                <p
+                  class="service-modal__form-status"
+                  role="status"
+                  aria-live="polite"
+                ></p>
+
+                <div class="service-modal__form-actions">
+                  <button class="service-modal__back" type="button">
+                    ← Back
+                  </button>
+
+                  <button class="service-modal__submit" type="submit">
+                    Send request <span aria-hidden="true">↗</span>
+                  </button>
+                </div>
+              </form>
+            </div>
+            <!-- END CONTACT FORM -->
           </div>
         </dialog>
 

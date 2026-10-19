@@ -113,14 +113,18 @@
   color: #101010;
 }
 
+/* LANGUAGE BUTTON */
+
 .language-button {
   padding: 8px;
   border: 0;
+  outline: none;
   background: transparent;
   color: #f5f5f5;
   font-size: 13px;
   cursor: pointer;
   transition: color 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .language-button:hover {
@@ -139,9 +143,18 @@
   width: 42px;
   height: 42px;
   padding: 8px;
-  border: 1px solid #292929;
+  border: none;
+  outline: none;
   background: transparent;
+  box-shadow: none;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.burger:focus,
+.burger:active {
+  outline: none;
+  box-shadow: none;
 }
 
 .burger span {
